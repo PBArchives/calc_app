@@ -17,7 +17,7 @@ def calcular():
             return
 
         # Preço de venda correto
-        preco_venda = custo / (1 - margem - impostos_totais)
+        preco_venda = custo * (1 + (margem + impostos_totais))
 
         # Valores
         valor_impostos = custo * impostos_totais
