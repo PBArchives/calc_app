@@ -16,13 +16,11 @@ def calcular():
             messagebox.showerror("Erro", "Margem + impostos não pode ser >= 100%")
             return
 
-        # Preço de venda correto
-        preco_venda = custo * (1 + (margem + impostos_totais))
-
         # Valores
         valor_impostos = custo * impostos_totais
-        lucro = preco_venda * margem
         custo_final = custo + valor_impostos
+        preco_venda = custo_final * (1 + margem)
+        lucro = preco_venda - custo_final
 
         # Exibir
         resultado_venda.set(f"R$ {preco_venda:.2f}")
